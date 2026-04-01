@@ -42,12 +42,13 @@ export default function OTPVerification() {
           <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 16 }}>
             <p style={{ fontWeight: 600, fontSize: 17 }}>Enter the OTP sent to</p>
             <p style={{ color: 'var(--blue)', fontWeight: 600 }}>+91 {phone}</p>
-            <div className="otp-boxes">
+            <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
               {otp.map((d, i) => (
-                <input key={i} className="otp-box" maxLength={1} value={d}
+                <input key={i} maxLength={1} value={d}
                   ref={el => refs.current[i] = el}
                   onChange={e => handleOtp(i, e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Backspace' && !d && i > 0) refs.current[i - 1]?.focus() }} />
+                  onKeyDown={e => { if (e.key === 'Backspace' && !d && i > 0) refs.current[i - 1]?.focus() }}
+                  style={{ width: '44px', flexShrink: 0, height: '52px', borderRadius: '10px', background: 'var(--card)', border: `1px solid ${d ? 'var(--blue)' : 'var(--border)'}`, textAlign: 'center', fontSize: '22px', fontWeight: 700, color: '#fff', fontFamily: 'inherit', outline: 'none' }} />
               ))}
             </div>
             <button className="btn btn-blue" disabled={!filled} style={{ opacity: filled ? 1 : 0.4, marginTop: 8 }}
