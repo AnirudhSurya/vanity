@@ -242,19 +242,21 @@ body {
 }
 
 /* OTP boxes */
-.otp-boxes { display: flex; gap: 8px; }
+.otp-boxes { display: flex; gap: 8px; width: 100%; }
 .otp-box {
   flex: 1;
-  height: 56px;
-  border-radius: 12px;
+  min-width: 0;
+  height: 48px;
+  border-radius: 10px;
   background: var(--card);
   border: 1px solid var(--border);
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #fff;
   font-family: inherit;
   outline: none;
+  padding: 0;
 }
 .otp-box:focus { border-color: var(--blue); }
 
