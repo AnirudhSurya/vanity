@@ -242,10 +242,9 @@ body {
 }
 
 /* OTP boxes */
-.otp-boxes { display: flex; gap: 8px; width: 100%; }
+.otp-boxes { display: flex; justify-content: space-between; width: 100%; }
 .otp-box {
-  flex: 1;
-  min-width: 0;
+  width: calc((100% - 40px) / 6);
   height: 48px;
   border-radius: 10px;
   background: var(--card);
@@ -257,6 +256,7 @@ body {
   font-family: inherit;
   outline: none;
   padding: 0;
+  box-sizing: border-box;
 }
 .otp-box:focus { border-color: var(--blue); }
 
